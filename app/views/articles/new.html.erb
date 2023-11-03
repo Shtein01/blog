@@ -1,0 +1,53 @@
+<h3>New Article</h3>
+
+<%= form_with model: @article do |form| %>
+  <% if @article.errors.any? %>
+    <% @article.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"> <%= msg %> </div>
+    <%end %>
+  <% end %>
+  <p>
+    Название <br>
+    <%= form.text_field( :title, { :class => 'form form-control'} ) %>
+  </p>
+  <p>
+    Текст статьи <br>
+    <%= form.text_area( :body, { :class => 'form form-control'} ) %>
+  </p>
+
+  <p>
+    Статус:
+    <%= form.select :status, Visible::VALID_STATUSES, selected: @article.status ||= 'public' %>
+  </p>
+  <div>
+    <%= form.submit( {:class => 'btn btn-success'} ) %>
+  </div>
+<% end %>
+
+
+
+<!--<h2>New Article</h2>-->
+
+<%#= render "form", article: @article %>
+
+<%#= form_with model: @article do |form| %>
+<!--  <div>-->
+<!--    <%#= form.label :title %><br>-->
+    <%#= form.text_field( :title, { :class => 'form form-control'} ) %>
+    <%# @article.errors.full_messages_for(:title).each do |message| %>
+<!--      <div><%#= message %></div>-->
+    <%# end %>
+<!--  </div>-->
+
+<!--  <div>-->
+<!--    <%#= form.label :body %><br>-->
+    <%#= form.text_area( :body, { :class => 'form form-control'} ) %>
+    <%# @article.errors.full_messages_for(:body).each do |message| %>
+<!--      <div><%#= message %></div>-->
+    <%# end %>
+<!--  </div>-->
+
+<!--  <div>-->
+    <%#= form.submit( {:class => 'btn btn-success'} ) %>
+<!--  </div>-->
+<%# end %>

@@ -1,2 +1,19 @@
-<h1>Hello, Rails!</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<h2>Articles</h2>
+
+Our blog has <%= Article.public_count %> articles and counting!
+
+<!--<ul>-->
+  <% @articles.each do |article| %>
+  <div>
+    <% unless article.archived? %>
+        <h4> <%= article.title %></h4>
+        <p> <%= article.body %></p>
+        <%= link_to "Читать далее", article_path(article), :class => 'btn btn-outline-primary' %>
+    <hr>
+    <% end %>
+<% end %>
+  </div>
+
+<!--</ul>-->
+
+<%#= link_to "New Article", new_article_path %>
