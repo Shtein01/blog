@@ -5,8 +5,10 @@
   </p>
 
   <p>
-    <%= link_to "Удалить комментарий", [comment.article, comment], data:
-      { turbo_method: :delete, turbo_confirm: "Хотите удалить этот комментарий?" },
-      :class => 'btn btn-danger'%>
+    <%= link_to "Удалить комментарий", [comment.article, comment], #method: :delete
+                data:
+      { "turbo_method": :delete, turbo_confirm: "Хотите удалить этот комментарий?" },
+      :class => 'btn btn-danger'
+    %>
   </p>
 <% end %>

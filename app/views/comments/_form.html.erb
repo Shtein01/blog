@@ -3,14 +3,17 @@
     Пользователь <br>
     <%= form.text_field( :commenter, { :class => 'form form-control'} ) %>
   </p>
+
   <p>
     Комментарий <br>
     <%= form.text_area( :body, { :class => 'form form-control'} ) %>
   </p>
+
   <p>
     Статус:
     <%= form.select :status, Visible::VALID_STATUSES, selected: 'public' %>
   </p>
+
   <p>
     <%= form.submit "Добавить комментарий" %>
   </p>

@@ -2,10 +2,11 @@
 
 <p><%= @article.body %></p>
 
-<%= link_to "Редактировать", edit_article_path(@article), :class => 'btn btn-warning' %>
-<%= link_to "Удалить", article_path(@article), data:
-  { method: :delete, confirm: "Хотите удалить статью?" },
-             :class => 'btn btn-danger' %>
+<%= link_to "Редактировать", edit_article_path(@article), class: 'btn btn-warning' %>
+<%= link_to "Удалить", article_path(@article), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Хотите удалить эту статью?" },
+             class: 'btn btn-danger' %>
 
 <hr>
 
