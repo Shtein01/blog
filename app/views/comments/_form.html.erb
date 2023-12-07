@@ -1,3 +1,4 @@
+<!--Для отображения комментариев к статье-->
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
   <p>
     Пользователь <br>
@@ -15,7 +16,8 @@
   </p>
 
   <p>
-    <%= form.submit "Добавить комментарий" %>
+    <%= form.submit( {:class => 'btn btn-success'} ) %>
+    <%#= form.submit "Добавить комментарий" %>
   </p>
 <% end %>
 
