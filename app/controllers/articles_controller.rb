@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
-  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+  http_basic_authenticate_with name: 'dhh', password: 'secret', except: [:index, :show]
+  # attr_accessor :title
+
   def index
     @articles = Article.all
   end
@@ -9,7 +11,9 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @article = Article.new
+    title = 'Article ' + (Article.last.id + 1).to_s
+    @article = Article.new(title: title )
+    # flash.now[:notice] = "Fleshka!"
   end
 
   def create
@@ -24,6 +28,11 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+  end
+
+  def copy
+    article_old = Article.find(params[:id])
+    @article = Article.new(title: article_old.title, body: article_old.body)
   end
 
   def update

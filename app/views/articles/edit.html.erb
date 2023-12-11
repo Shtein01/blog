@@ -1,5 +1,5 @@
-<h3>Edit Article: <%= @article.title %></h3>
-
+<!--<h3> <%#= @article.title %></h3>-->
+<h3><%= page_heading ('Edit Article: ' + @article.title) %></h3>
 <%= render "form", article: @article %>
 
 <%#= form_for :article, url: article_path(@article), method: :patch do |form| %>
