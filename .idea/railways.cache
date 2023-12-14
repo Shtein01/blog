@@ -1,5 +1,5 @@
                                   Prefix Verb   URI Pattern                                                                                       Controller#Action
-                                    home GET    /                                                                                                 articles#index
+                                    root GET    /                                                                                                 articles#index
                         article_comments GET    /articles/:article_id/comments(.:format)                                                          comments#index
                                          POST   /articles/:article_id/comments(.:format)                                                          comments#create
                      new_article_comment GET    /articles/:article_id/comments/new(.:format)                                                      comments#new
@@ -8,6 +8,7 @@
                                          PATCH  /articles/:article_id/comments/:id(.:format)                                                      comments#update
                                          PUT    /articles/:article_id/comments/:id(.:format)                                                      comments#update
                                          DELETE /articles/:article_id/comments/:id(.:format)                                                      comments#destroy
+                            copy_article GET    /articles/:id/copy(.:format)                                                                      articles#copy
                                 articles GET    /articles(.:format)                                                                               articles#index
                                          POST   /articles(.:format)                                                                               articles#create
                              new_article GET    /articles/new(.:format)                                                                           articles#new

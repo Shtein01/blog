@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
   def new
     title = 'Article ' + (Article.last.id + 1).to_s
     @article = Article.new(title: title )
-    # flash.now[:notice] = "Fleshka!"
+    flash.now[:notice] = "Flashka in Article_controller#new"
   end
 
   def create

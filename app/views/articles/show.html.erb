@@ -3,6 +3,7 @@
 <p><%= @article.body %></p>
 
 <%= link_to "Редактировать", edit_article_path(@article), class: 'btn btn-warning' %>
+<% logger.tagged("show"){ logger.debug "Debug Article_controller, view: articles/show, link_to edit_article_path, #{@article.title}" }%>
 <%= link_to  "Копировать",  copy_article_path(@article), class: 'btn btn-warning' %>
 <%= link_to "Удалить", article_path(@article), data: {
         turbo_method: :delete,
